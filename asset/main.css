@@ -88,7 +88,7 @@ body{
 }
 
 .course-item:active .course-content {
-    /* display: block; */
+    display: block;
     color: brown;
 }
 
