@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Javascript</title>
+    <link rel="stylesheet" href="./asset/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+   <div class="container">
+    <section class="description width-body">
+        <h3>Learn Javascript ES6</h3>
+
+        <p>ES6 là chữ viết tắt của ECMAScript 6. ES6 ra đời vào năm 2015 nên cái tên ES2015 được lấy làm tên chính thức với nhiều tính năng mới học hỏi các ngôn ngữ cấp cao khác,
+             hy vọng dần theo thời gian Javascript trở thành một ngôn ngữ lập trình hướng đối tượng.</p>
+        
+        <div class="descrip-content">
+            <h4>Các chức năng mới của ES6</h4>
+            <ul class="content-list">
+                <li class="content-item"><i class="fa-solid fa-check"></i>
+                    Let & Const</li>
+                <li class="content-item"><i class="fa-solid fa-check"></i> 
+                    Arrow function</li>
+                <li class="content-item"><i class="fa-solid fa-check"></i> 
+                    Rest parameters</li>
+                <li class="content-item"><i class="fa-solid fa-check"></i> 
+                    Destructuring Assignments</li>
+                <li class="content-item"><i class="fa-solid fa-check"></i> 
+                    Default Parameters</li>
+                <li class="content-item"><i class="fa-solid fa-check"></i> 
+                    Template String</li>
+                <li class="content-item"><i class="fa-solid fa-check"></i> 
+                    Classes</li>
+                <li class="content-item"><i class="fa-solid fa-check"></i> 
+                    Modules</li>
+                <li class="content-item"><i class="fa-solid fa-check"></i> 
+                    Spead</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="course-body width-body">
+        <h4>Nội dung</h4>
+        <ul class="course-list">
+            <li id="content" class="course-item"> 
+                <span><i class="fa-solid fa-plus"></i>Let & Const  <input type="button" id="btn1" value="Ẩn"/>
+                    <input type="button" id="btn2" value="Hiển Thị"/></span>
+                <ul id="course" class="course-content">
+                    <li>
+                        <span>Let:  thường dùng để khai báo các biến mang tính chất tạm thời, nghĩa là nó chỉ sống trong một phạm vi hoạt động của khối đó thôi, không sử dụng qua vị trí khác. block scope được đánh dấu trong phạm vi cặp ngoặc nhọn {}.
+                        Và khi thoát khỏi block scope thì nó cũng bị mất đi.
+                        </span>
+
+                        <li class="example">var a = 12; <br>
+                            var b = 20;<br>
+                             
+                            if (a < b)<br>
+                            {<br>
+                                var tmp = a;<br>
+                                a = b;<br>
+                                b = tmp;<br>
+                            }<br>
+                             
+                            console.log("a: " + a);<br>
+                            console.log("b: " + b);<br>
+                            console.log("tmp: " + tmp); // đoạn này lỗi<br>
+                        </li>
+                    </li>
+                    
+                    <li>
+                        <span>Const: cũng giống như let, const cũng là block scope
+                        const không cho phép người dùng khai báo nhiều lần trong cùng scope, và cũng không cho phép người dùng cập nhật hay thay đổi giá trị của biến.
+                        </span>
+
+                        <li class="example">
+                            const greeting = "say Hi";<br>
+                            greeting = "say Hello instead"; // error : Assignment to constant variable. <br>
+                        
+                            ------------------------------------------------ <br>
+                        
+                            const greeting = "say Hi";<br>
+                            const greeting = "say Hello instead"; // error : Identifier 'greeting' has already been declared <br>
+                        
+                        </li>
+
+                    </li>
+
+                </ul>
+            </li>
+
+            <li id="content" class="course-item"> 
+                <span><i class="fa-solid fa-plus"></i> Arrow function <input type="button" id="btn3" value="Ẩn"/>
+                    <input type="button" id="btn4" value="Hiển Thị"/></span>
+                <ul id="course" class="course-content">
+                    <li>
+                        <span>Arrow function - còn được gọi là "fat arrow", là cú pháp được mượn từ CoffeeScript (một ngôn ngữ chuyển tiếp), cú pháp này là cách ngắn gọn hơn dùng để viết function.
+                            Ở đây sử dụng kí tự =>, trông giống như một mũi tên.
+                        </span>
+
+                        <li class="example">
+                           +Trong trường hợp nhiều tham số <br>
+                        // ES5 <br>
+                        var multiply = function(x, y) { <br>
+                            return x * y;  <br>
+                        }; <br>
+                        
+                        // ES6 <br>
+                        var multiply = (x, y) => { return x * y }; <br>
+                        </li>
+
+                        <li class="example">
+                           + Trong trường hợp 1 tham số <br>
+                            //ES5 <br>
+                            var phraseSplitterEs5 = function phraseSplitter(phrase) { <br>
+                                return phrase.split(' '); <br>
+                            }; <br>
+                             
+                            //ES6 <br>
+                            var phraseSplitterEs6 = phrase => phrase.split(" ");  <br>
+                             
+                        </li>
+                    
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li id="content" class="course-item"> 
+                <span><i class="fa-solid fa-plus"></i>Destructuring Assignments <input type="button" id="btn1" value="Ẩn"/>
+                    <input type="button" id="btn2" value="Hiển Thị"/></span>
+                <ul id="course" class="course-content">
+                    <li>
+                        <span>Destructuring assignment là một biểu thức JavaScript dùng để lấy ra (destructure) giá trị của một hay nhiều phần tử rong mảng hoặc đối tượng đồng thời gán các giá trị này cho các biến cho trước.. Điều này có thể làm giảm đáng kể các dòng mã cần thiết để thao tác dữ liệu trong các cấu trúc này. Có hai loại Destructuring: Destructuring Objects và Destructuring Arrays.
+                        </span>
+
+                        <li class="example">
+                           <span class="black">Destructuring Objects<br></span>
+                            
+                           let user = { <br>
+                            name: 'Name', <br>
+                            age: 20,  <br>
+                            address: 'HN' <br>
+                        } <br>
+                        Theo cách truyền thống thì chúng ta sẽ lấy ra những giá trị như cú pháp sau: <br>
+
+                        let name = user.name // name = 'Name' <br>
+                        let age = user.age // age = 20 <br>
+                        let  job = user.address // address = 'HN' <br>
+                        Nhưng với việc sử dụng object destructuring chúng ta có thể get được những giá trị ấy miễn là trùng tên của thuộc tính trong object là được: <br>
+                        let { name, age,address } = user // name = 'Name', age = 20, address = 'HN'<br>
+
+                        </li>
+
+                        
+
+                        <li class="example">
+                             
+                        </li>
+                    
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li id="content" class="course-item"> 
+                <span><i class="fa-solid fa-plus"></i>Rest parameters</span>
+                <ul id="course" class="course-content">
+                    <li>
+                        <span>Rest Parameters dịch theo tiếng Anh chuyên ngành công nghệ thông tin có nghĩa là tham số còn lại, điều này có nghĩa là bạn có thể khai báo một hàm với số lượng tham số không xác định, đây là một tính năng mới khiến Javascript ngày càng trở nên mạnh mẽ hơn.
+                        </span>
+
+                        <li class="example">
+                          
+                            
+                            let functionName = (param1, param2, ...other) => {
+                            
+                            }
+
+                        </li>
+                    
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li id="content" class="course-item"> 
+                <span><i class="fa-solid fa-plus"></i> Default Parameters</span>
+                <ul id="course" class="course-content">
+                    <li>
+                        <span>Default Parameter là giá trị mặc định của tham số khi truyền vào các function. 
+                             Sử dụng khi định nghĩa hàm có những tham số không bắt buộc phải nhập
+                        </span>
+
+                        <li class="example">
+                           function logger(log, isAlert = false){ <br>
+                            if (isAlert) return alert(log); <br>
+                            console.log(log); <br>
+                           } <br>
+                           logger("Message...",true); <br>
+                           // hiển thị thông báo alert <br>
+                        </li>
+
+                        
+
+                        <li class="example">
+                             
+                        </li>
+                    
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li id="content" class="course-item"> 
+                <span><i class="fa-solid fa-plus"></i>Template String</span>
+                <ul id="course" class="course-content">
+                    <li>
+                        <span>Template Strings là một cú pháp mới để khai báo String trong Javascript được giới thiệu trong ES2015/ES6
+                            Nó cho phép chúng ta sử dụng multi-line string, sử dụng biến, biểu thức, hàm bên trong string mà không phải thông qua phép cộng string.
+                        </span>
+
+                        <li class="example">
+                           const courseName ="Javascript" <br>
+                           const description = `Course name: ${courseName}`; <br>
+                           console.log(description);  <br>
+                           // Course name: Javascript  <br>
+
+
+                        </li>
+                        <span>
+                        ES6 template string sử dụng dấu backtick để biểu diễn. <br>
+                        ES6 template string giúp ghép nối string đơn giản hơn, không cần phải sử dụng toán tử + hay phương thức concat nữa. <br>
+                        ES6 template string giúp sử dụng đồng thời dấu nháy đơn và nháy kép mà không cần dùng kí tự \. <br>
+                        ES6 template string giúp viết string trên nhiều dòng đơn giản hơn. <br>
+                        ES6 template cho phép viết biểu thức hoặc gọi hàm ngay trong string. <br>
+                         </span>
+
+                        
+                    
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li id="content" class="course-item"> 
+                <span><i class="fa-solid fa-plus"></i> Classes</span>
+                <ul id="course" class="course-content">
+                    <li>
+                        <span>Trong ES6 đã hỗ trợ chúng ta khai báo một đối tượng theo chuẩn OOP, bằng cách sử dụng từ khóa class.
+                        </span>
+
+                        <li class="example">
+                            class Employee { <br>
+                                setName (name) { <br>
+                                    this.name = name; <br>
+                                } <br>
+                                getName () {  <br>
+                                    return this.name;  <br>
+                                } <br>
+                                setAge (age) { <br>
+                                    this.age = age; <br>
+                                }  <br>
+                                getAge () {  <br>
+                                    return this.age;  <br>
+                                }  <br>
+                            }; <br> 
+                        </li>
+
+                        
+
+                        <li class="example">
+                             
+                        </li>
+                    
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li id="content" class="course-item"> 
+                <span><i class="fa-solid fa-plus"></i>Modules</span>
+                <ul id="course" class="course-content">
+                    <li>
+                        <span>
+                        </span>
+
+                        <li class="example">
+                            <span class="black"> Sử dụng export riêng lẻ ở cuối file module. Cách sử dụng này được gọi là "named export" do ta định nghĩa tên của object đang được export trong khi đang export. <br></span>
+                            function foo() { return 'foo'; } <br>
+                            function bar() { return 'bar'; } <br>
+                            export { foo, bar }; <br>
+
+                            <span class="black">Ta có thể sử dụng object được export từ các file khác như sau: <br></span>
+                            import {foo, bar} from 'foobar'; <br>
+                            foo(); <br>
+                            bar(); <br>
+
+                            import * as lib from 'foobar'; <br>
+                            lib.foo(); <br>
+                            lib.bar(); <br>
+                        </li>
+
+                        
+
+                        <li class="example">
+                            <span class="black">Một format khác khi sử dụng "named export" là ta có thể export objects/function khi ta tạo ra chúng. Cấu trúc sau có phần tiện hơn so với ở ví dụ 1.<br></span>
+                            export function foo() { return 'foo'; } <br>
+                            export function bar() { return 'bar'; } <br>
+                        </li>
+                    
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li id="content" class="course-item"> 
+                <span><i class="fa-solid fa-plus"></i>Spead</span>
+                <ul id="course" class="course-content">
+                    <li>
+                        <span>Cú pháp spread đơn giản được biểu diễn bởi dấu 3 chấm: ... <br>
+                            Spread Syntax cho phép duyệt qua các phần tử và truyền vào phương thức như các đối số <br>
+                        </span>
+
+                        <li class="example">
+                            var mid = [3, 4]; <br>
+                            var arr = [1, 2, ...mid, 5, 6]; <br>
+                            
+                            console.log(arr); <br>
+                             // kết  quả: [1,2,3,4,5,6]
+                        </li>
+
+                        
+
+                        <li class="example">
+                             
+                        </li>
+                    
+                    </li>
+                    
+                </ul>
+            </li>
+
+        </ul>
+    </section>
+
+    
+
+   </div>
+
+   <script>
+        var Content = document.getElementById('content');
+        var Course = document.getElementById('course');
+        var isClosed =  document.getElementById("course").style.display = 'block';
+        
+       
+       
+        document.getElementById("btn2").onclick = function () {
+        document.getElementById("course").style.display = 'block';
+        };
+    
+        
+        document.getElementById("btn1").onclick = function () {
+        document.getElementById("course").style.display = 'none';
+        };
+
+       
+        
+    
+   </script>
+</body>
+</html>

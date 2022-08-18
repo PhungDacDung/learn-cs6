@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    font-family:'Montserrat',Arial,Helvetica,sans-serif;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+}
+
+.container{
+    margin:  40px;
+}
+
+.width-body{
+    width:900px;
+}
+.description {
+
+}
+.description h3{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 16px;
+    min-height: 33px;
+}
+
+.description p{
+    font-size: 14px;
+    color: rgb(141, 144, 146);
+    margin-top: 14px;
+}
+
+.descrip-content{
+     margin-top: 12px;
+}
+
+.descrip-content h4{
+    font-size: 20px;
+}
+.descrip-content{
+
+}
+
+.content-list{
+    list-style-type: none;
+    font-size: 14px;
+    color: rgb(90, 92, 93);
+    margin-left: 16px;
+}
+
+.content-item i{
+    color: crimson;
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.course-content{
+
+}
+
+.course-body h4{
+    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 14px;
+
+}
+
+.course-list{
+    list-style-type: none;
+    position: relative;
+    margin-left: 20px;
+}
+
+.course-item{
+    margin-top: 20px;
+}
+
+.course-item i{
+    color: crimson;
+    margin-right:8px;
+}
+
+.course-item > span{
+    font-weight: 600;
+}
+
+.course-item:active .course-content {
+    /* display: block; */
+    color: brown;
+}
+
+.course-content{
+    list-style-type: none;
+    margin-right: 30px;
+    display: none;
+}
+
+.course-content li span{
+    font-style: italic;
+}
+
+.hide{
+    display: none;
+}
+
+.black{
+    color: black;
+}
+
+.example{
+    color: forestgreen;
+    margin-left: 20px;
+}
+
+
